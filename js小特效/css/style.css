@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+/*Style*/
+
+*{margin:0;padding:0;list-style:none;}
+#banner{min-width:1000px;height:371px;text-align: center;}
+#banner  .slideBox{min-width:1000px;position:relative;height:371px;}
+#banner  .slideBox  .hd{line-height:30px;position:relative;}
+#banner  .slideBox  .hd  ul{position: absolute;height:32px;top:335px;left:49%;_left:0%;}
+#banner  .slideBox  .hd  ul li{float:left;cursor:pointer;width: 16px;margin-right: 14px;height: 16px;border-radius: 50%;background:url("../images/white.png") no-repeat;}
+#banner  .slideBox  .hd  ul li.on{background:url("../images/blue.png") no-repeat;}
+#banner .slideBox .bd{position:relative;}
+#banner .slideBox .bd ul{position: relative;zoom:1px;}
+#banner .slideBox .bd ul li{height:371px;position:absolute;min-width: 1000px;width: 100%;*left:0px;}
+#banner .slideBox .bd ul li a{width: 100%;display: block;height: 371px;background:url("../images/banner.jpg") no-repeat center;}

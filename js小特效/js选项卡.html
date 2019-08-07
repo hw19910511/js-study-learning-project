@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>js选项卡</title>
+	<style>
+	  #div1 div{width:250px;height:150px;border:1px solid #999;text-align:center;line-height:150px;display:none;background:#ccc;}
+	  #div1 .active{background:orange;}
+	</style>
+	<script type="text/javascript">
+	 window.onload=function(){
+	   var oDiv=document.getElementById('div1');
+	   var aBtn=oDiv.getElementsByTagName('input');
+	   var aDiv=oDiv.getElementsByTagName('div');
+
+	   for(var i=0;i<aBtn.length;i++){
+	     aBtn[i].index=i;//自定义属性**索引
+		 aBtn[i].onclick=function()
+		 {
+            //alert(this.value);
+		   for(var i=0;i<aBtn.length;i++){
+		     aBtn[i].className='';//让其他的按钮都没有样式
+			 aDiv[i].style.display='none';//隐藏其他div的出现
+		   }
+		   this.className='active';//当个按钮样式出现
+		   aDiv[this.index].style.display='block';//当个的div样式出现
+		 }
+	   }
+	   
+	 };
+	</script>
+</head>
+<body>
+	<div id="div1">
+	  <input class="active" type="button" value="HTML"/>
+	  <input type="button" value="CSS"/>
+	  <input type="button" value="JAVASCRIPT"/>
+	  <input type="button" value="Bootstrap"/>
+	  <input type="button" value="Angular JS"/>
+	  <div style="display:block;">HTML</div>
+	  <div>CSS</div>
+	  <div>JAVASCRIPT</div>
+	  <div>Bootstrap</div>
+	  <div>Angular JS</div>
+	</div>
+</body>
+</html>

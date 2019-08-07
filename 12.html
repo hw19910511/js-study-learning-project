@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>JavaScript教程12-DOM操作应用</title>
+	<script type="text/javascript"> 
+     window.onload=function(){
+	  var oBtn=document.getElementById('btn1');
+	  var oUl=document.getElementById('ul1');
+	  var oTxt=document.getElementById('txt1');
+	  oBtn.onclick=function()
+	  {
+	    var oLi=document.createElement('li');
+		var aLi=oUl.getElementsByTagName('li');
+		
+		oLi.innerHTML=oTxt.value;
+		//父级.appendChild(子节点)-追加
+		//父级.insertBefore(子节点，在谁之前）-插入
+		//oUl.appendChild(oLi);//appendChild添加到父级元素之后 
+		if(aLi.length>0){
+		}
+		oUl.insertBefore(oLi,aLi[0]);
+	  }
+	  
+	  //父级.removeChild(子节点)-删除
+	
+	  var aA=document.getElementsByTagName('a');
+	  var oUli=document.getElementById('ul2');
+	  
+	  for(var i=0;i<aA.length;i++){
+	    aA[i].onclick=function(){
+		  oUli.removeChild(this.parentNode);
+		};
+	  }
+
+	  //文档碎片
+	  var oUl=document.getElementById('ul3');
+	  var oFrag=document.createDocumentFragment();//创建文档碎片
+	  
+	  for(var i=0;i<1000;i++){
+	    var oLi=document.createElement('li');
+		oFrag.appendChild(oLi);
+	  }
+	  oUl.appendChild(oFrag);
+	  
+	 };
+	</script>
+</head>
+<body>
+      <!---创建元素--->
+	  <input type="text" name="" id="txt1" />
+	  <input type="button" value="创建li" id="btn1" />
+	  <ul id="ul1">
+	  
+	  </ul>
+	  <hr />
+	  <!---删除元素--->
+	  <ul id="ul2">
+	  	<li>asdsaf1<a href="javascript:;">删除</a></li>
+		<li>asdsaf2<a href="javascript:;">删除</a></li>
+		<li>asdsaf3<a href="javascript:;">删除</a></li>
+		<li>asdsaf4<a href="javascript:;">删除</a></li>
+		<li>asdsaf5<a href="javascript:;">删除</a></li>
+		<li>asdsaf6<a href="javascript:;">删除</a></li>
+		<li>asdsaf7<a href="javascript:;">删除</a></li>
+		<li>asdsaf8<a href="javascript:;">删除</a></li>
+		<li>asdsaf9<a href="javascript:;">删除</a></li>
+	  </ul>
+	  <hr />
+	  <!---文档碎片--->
+	  <ul id="ul3"></ul>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>canvas引入图像</title>
+	<script>
+	  function draw(){
+	    var ctx=document.getElementById('myCanvas').getContext('2d');
+		var img=new Image();
+		img.onload=function(){
+		  ctx.drawImage(img,0,0);
+		  /*ctx.font="italic 60px Arial Black";
+		  ctx.shadowOffsetX=3;
+          ctx.shadowOffsetY=3;
+		  ctx.shadowBlur=2;
+		  ctx.shadowColor="rgba(0,0,0.7)";
+		  ctx.fillStyle="red";
+		  ctx.fillText("huangwei",0,165);*/
+		  ctx.drawImage(img,30,40,140,180,0,240,140,180);
+		}
+		img.src="images/1.jpg";
+	}
+		window.onload=function(){
+		draw();
+		}
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="600" height="400"></canvas>
+	
+</body>
+</html>

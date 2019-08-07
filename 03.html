@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>JavaScript教程03</title>
+	<style>
+	  #div1 {width:200px;height:200px;background:red;}
+	  #div2 {width:200px;height:200px;background:red;}
+	</style>
+	<script>
+	  /*
+	  function toGreen()
+	  {
+	    var oDiv=document.getElementById('div1');
+		oDiv.style.background='green';
+	  }
+	  function toYellow()
+	  {
+	    var oDiv=document.getElementById('div1');
+		oDiv.style.background='yellow';
+	  }
+	  function toBlack()
+	  {
+	    var oDiv=document.getElementById('div1');
+		oDiv.style.background='black';
+	  }
+	  */
+	  function setColor(color)
+	  {
+	    var oDiv=document.getElementById('div1');
+		oDiv.style.background=color;
+	  }
+	  
+	  /*
+	  function toWidth(){
+	    var oDiv=document.getElementById('div2');
+		oDiv.style.width='400px';
+	  }
+	 
+	 function toHeight(){
+	    var oDiv=document.getElementById('div2');
+		oDiv.style.height='400px';
+	  }
+	  
+	  function toBlue(){
+	    var oDiv=document.getElementById('div2');
+		oDiv.style.background='blue';
+	  }*/
+	  
+	  /*第一种操作属性的方法  .*/ 
+	  /*第二种操作属性的方法  []  什么时候用：要修改的属性不固定 */
+	  function setStyle(name,value)
+	  {
+	     var oDiv=document.getElementById('div2');
+		 oDiv.style[name]=value;
+	  }
+	  
+	  //字面量(常量)：看到的东西，自然知道是什么
+	</script>
+</head>
+<body>
+	<!--函数传参-->
+	<input type="button" value="变绿" onclick="setColor('green');"/>
+	<input type="button" value="变黄" onclick="setColor('yellow');"/>
+	<input type="button" value="变黑" onclick="setColor('black');"/>
+	<div id="div1"></div>
+	<br /><hr />
+	<input type="button" value="变宽" onclick="setStyle('width','400px')" />
+	<input type="button" value="变高" onclick="setStyle('height','400px')" />
+	<input type="button" value="变蓝" onclick="setStyle('background','blue')" />
+	<div id="div2"></div>
+</body>
+</html>

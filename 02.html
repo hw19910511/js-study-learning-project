@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>JavaScript教程02</title>
+	<link id="l1" rel="stylesheet" href="css1.css" />
+	<style type="text/css">
+	  #div1{width:100px;height:200px;background:blue;display:none; }
+	  #div2{width:100px;height:100px;border:1px solid yellow; }
+	  .box{background:red;}
+	</style>
+	<script type="text/javascript">
+	  function skin1()
+	  {
+	     var oL=document.getElementById('l1');
+		 oL.href='css1.css';
+	  }
+	  
+	  function skin2()
+	  {
+	     var oL=document.getElementById('l1');
+		 oL.href='css2.css';
+	  }
+	  
+	  function setText()
+	  {
+	     var oTxt=document.getElementById('txt1');
+		 oTxt.value='huangwei';
+		 oTxt.title='JavaScript教程02-网页换肤';
+	  }
+	  
+	  function showHide()
+	  {
+	     var oDiv=document.getElementById('div1');
+		 if(oDiv.style.display=='block')
+		 {
+		    oDiv.style.display='none';
+		 }else{
+		    oDiv.style.display='block';
+		 }
+	  }
+	  
+	  function toRed()
+	  {
+	    var oDiv=document.getElementById('div2');
+		oDiv.className='box';
+	  }
+	</script>
+</head>
+<body>
+    <!------网页换肤------>
+	<input type="button" value="皮肤1" onclick="skin1()" />
+	<input type="button" value="皮肤2" onclick="skin2()" />
+	<br /><hr />
+	<!------改文字------>
+	<input type="text" id="txt1" />
+	<input type="button" value="改文字" onclick="setText()"/>
+	<br /><hr />
+	<!------显示隐藏------>
+	<input type="button" value="显示隐藏" onclick="showHide()" />
+	<div id="div1"></div>
+	<br /><hr />
+	<!------a链接加js------>
+	<a href="javascript:;">链接</a>
+	<br /><hr />
+	<!------className使用------>
+	<input type="button" value="变红" onclick="toRed()" />
+	<div id="div2"></div>
+</body>
+</html>

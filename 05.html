@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>JavaScript教程05</title>
+	<style type="text/css">
+	  #div1 .active{background:yellow;}
+	  #div1 div{width:200px;height:200px;background:#ccc;border:1px solid #999;display:none;}
+	  
+	  #div2{width:200px;height:150px;border:1px black solid;}
+	</style>
+	<script type="text/javascript">
+	//选项卡
+	  window.onload=function(){
+	    var oDiv=document.getElementById('div1');
+		var aBtn=oDiv.getElementsByTagName('input');
+		var aDiv=oDiv.getElementsByTagName('div');
+		
+		for(var i=0;i<aBtn.length;i++)
+		{
+		  aBtn[i].index=i;//自定义属性--索引
+		  aBtn[i].onclick=function()
+		  {
+		  //this:当前事件发生的元素
+		    //alert(this.value);
+			for(var i=0;i<aBtn.length;i++){
+			  aBtn[i].className='';//让其他的按钮都没有样式
+			  aDiv[i].style.display='none';//隐藏其他div的出现
+			}
+			this.className='active';
+			//alert(this.index);
+			aDiv[this.index].style.display='block';
+		  };
+		}
+	  }
+	  
+	  //设置文字
+	   window.onload=function()
+	   {
+	     var oTxt=document.getElementById('txt1');
+		 var oBtn=document.getElementById('btn1');
+		 var oDiv=document.getElementById('div2');
+		 oBtn.onclick=function(){
+		   oDiv.innerHTML=oTxt.value;
+		   //  alert(oDiv.innerHTML);
+		 };
+	   }
+	</script>
+</head>
+<body>
+    <!----选项卡---->
+	<div id="div1">
+	  <input class="active" type="button" value="教育" />
+	  <input type="button" value="培训" />
+	  <input type="button" value="招生" />
+	  <input type="button" value="出国" />
+	  <div style="display:block;">1111</div>
+	  <div>2222</div>
+	  <div>3333</div>
+	  <div>4444</div>
+	</div>
+	<hr />
+	<!----innerHtml---->
+	<input type="text" id="txt1" />
+	<input type="button" id="btn1" value="设置文字"/>
+	<div id="div2"></div>
+	<hr></hr>
+	<!---js简历日历--->
+	<div id="tab" class="calendar">
+	   <ul>
+	   	<li><h2>1</h2><p>JAN</p></li>
+		<li><h2>2</h2><p>FER</p></li>
+		<li><h2>3</h2><p>MAR</p></li>
+		<li><h2>4</h2><p>APR</p></li>
+		<li><h2>5</h2><p>MAY</p></li>
+		<li><h2>6</h2><p>JUN</p></li>
+		<li><h2>7</h2><p>JUL</p></li>
+		<li><h2>8</h2><p>AUG</p></li>
+		<li><h2>9</h2><p>SEPT</p></li>
+		<li><h2>10</h2><p>OCT</p></li>
+		<li><h2>11</h2><p>NOV</p></li>
+		<li><h2>12</h2><p>DEC</p></li>
+	   </ul>
+	</div>
+</body>
+</html>

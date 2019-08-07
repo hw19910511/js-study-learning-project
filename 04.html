@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>JavaScript教程04</title>
+	<style>
+	  #div1{width:200px;height:200px;border:1px solid #000;}
+	  .box{background:red;}
+	  div{width:200px;height:200px;float:left;border:1px solid black;margin:10px;}
+	</style>
+	<script>
+	//1.style加样式  行间
+	//2.style取样式  行间
+	//样式优先级：*<表情<class<id<行间
+	  function toRed(){
+	    var oDiv=document.getElementById('div1');
+		 //oDiv.style.background='red';
+		 //alert(oDiv.style.background);
+	     oDiv.className='box';
+	  }
+	  function toGreen(){
+	    var oDiv=document.getElementById('div1');
+		 oDiv.style.background='green';
+	  }
+	  
+	  window.onload=function(){
+	     var oBtn=document.getElementById('btn1');
+		 oBtn.onclick=function(){//匿名函数
+			confirm('Js');
+	     }
+	  }
+	  
+	  window.onload=function(){
+	    var aDiv=document.getElementsByTagName('div');
+		//alert(aDiv.length);
+		//aDiv[1].style.background='orange';
+		for(var i=0;i<aDiv.length;i++){
+		 aDiv[i].style.background='orange';
+		}
+	  }
+	  
+	  /* 全选、不选、反选 */
+	  window.onload=function(){
+	     var oBtn1=document.getElementById('btn2');
+		 var oBtn2=document.getElementById('btn3');
+		  var oBtn3=document.getElementById('btn4');
+		 var oDiv=document.getElementById('div2');
+		 var aCh=oDiv.getElementsByTagName('input');
+		 //全选
+		 oBtn1.onclick=function()
+		 {
+		   //aCh[0].checked=true;
+		   for(var i=0;i<aCh.length;i++)
+		   {
+		     aCh[i].checked=true;
+		   }
+		 }
+		 
+		 //全不选
+		 oBtn2.onclick=function()
+		 {
+		   //aCh[0].checked=true;
+		   for(var i=0;i<aCh.length;i++)
+		   {
+		     aCh[i].checked=false;
+		   }
+		 }
+		 
+		 //反选
+		 oBtn3.onclick=function()
+		 {
+		  
+		   for(var i=0;i<aCh.length;i++)
+		   {
+		     if(aCh[i].checked==true)
+			 {
+			    aCh[i].checked=false;
+			 }else{
+			     aCh[i].checked=true;
+			 }	    
+		   }
+		 }
+	  };
+	</script>
+</head>
+<body>
+	<input type="button" value="变红" onclick="toRed()"/>
+	<input type="button" value="变绿" onclick="toGreen()"/>
+	<div id="div1"></div>
+	<br /><hr />
+	<!---提取行间事件--->
+	<input id="btn1" type="button" value="按钮" />
+	<!--<script type="text/javascript">
+	  var oBtn=document.getElementById('btn1');
+	  //oBtn.value='aaa';
+	 /* function abc(){
+	    alert('JavaScript');
+	  }
+	  oBtn.onclick=abc;*/
+	  
+	  oBtn.onclick=function(){//匿名函数
+	    alert('Js');
+	  }
+	</script>-->
+	
+	<br /><hr />
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	
+	<br /><hr />
+	<!--全选、不选、反选-->
+	<input id="btn2" type="button" value="全选" /><br />
+	<input id="btn3" type="button" value="全不选" /><br />
+	<input id="btn4" type="button" value="反选" /><br />
+	<div id="div2">
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+		<input type="checkbox" /><br />
+	</div>
+	
+</body>
+</html>

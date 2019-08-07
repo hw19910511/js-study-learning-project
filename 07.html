@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>JavaScript教程07</title>
+	<script type="text/javascript">
+	//隔行换色
+	  window.onload=function()
+	  {
+	    var aLi=document.getElementsByTagName('li');
+		
+		for(var i=0;i<aLi.length;i++)
+		{
+		   if(i%2==0)
+		   {
+		     aLi[i].style.background='#ccc';
+		   }
+		   else
+		   {
+             aLi[i].style.background='';
+		   }
+		}
+	  }
+
+	  //秒转成时间
+	  var s=121;
+	  alert(parseInt(s/60)+'分'+s%60+'秒');
+	</script>
+</head>
+<body>
+    <!--隔行换色--->
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+	<!--秒转成时间-->
+	
+</body>
+</html>
